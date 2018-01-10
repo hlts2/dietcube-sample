@@ -7,7 +7,8 @@ You can start application, by excuting following commands.
 ```
 ```
 
-then, enter the URL in the browser
+then, enter the URL in the browser.
+
 http://localhost:8001/
 
 ## About dietcube
