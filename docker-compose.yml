@@ -2,9 +2,11 @@ version: "2"
 services:
     web:
         build: dockerfiles/alpine-php
+        working_dir: /app
+        expose:
+            - $APP_PORT
         ports:
             - $APP_PORT:$APP_PORT
         volumes:
             - ./:/app
-        working_dir: /app
-        command: composer install
+        command: sh -c "composer install && DIET_ENV=development php -d variables_order=EGPCS -S localhost:8999 -t webroot/"
