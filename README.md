@@ -7,8 +7,7 @@ You can start application, by excuting following commands.
 ```
 git clone git@github.com:hlts2/dietcube-sample.git
 cd dietcube-sample
-composer install
-DIET_ENV=development php -d variables_order=EGPCS -S localhost:8999 -t webroot/
+docker-compose up -d
 ```
 
 then, enter the URL in the browser.
