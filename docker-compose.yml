@@ -1,12 +1,11 @@
-version: "2"
+version: '2'
 services:
     web:
-        build: dockerfiles/alpine-php
-        working_dir: /app
-        expose:
-            - $APP_PORT
+        build: "./dockerfiles/alpine-php"
+        container_name: "dietcube_sample_app"
+        working_dir: "/app"
         ports:
-            - $APP_PORT:$APP_PORT
+            - "$APP_PORT:$APP_PORT"
         volumes:
-            - ./:/app
-        command: sh -c "composer install && DIET_ENV=development php -d variables_order=EGPCS -S localhost:8999 -t webroot/"
+            - "./:/app"
+        command: sh -c "DIET_ENV=$DIET_ENV php -d variables_order=EGPCS -S 0:$APP_PORT -t webroot/"

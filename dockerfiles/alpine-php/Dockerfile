@@ -1,6 +1,6 @@
 FROM php:7.1-alpine
 
-RUN apk update \ 
+RUN apk update \
     && apk upgrade \
     && apk --no-cache add wget \
     && wget https://getcomposer.org/download/1.1.1/composer.phar -O composer \
